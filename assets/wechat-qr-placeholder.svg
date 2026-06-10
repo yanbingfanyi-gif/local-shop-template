@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="微信二维码占位图，请替换为真实二维码">
+  <rect width="200" height="200" fill="#ffffff"/>
+  <rect x="1" y="1" width="198" height="198" fill="none" stroke="#dddddd" stroke-width="2"/>
+
+  <!-- Finder pattern: top-left -->
+  <g>
+    <rect x="10" y="10" width="40" height="40" fill="#2e2117"/>
+    <rect x="17" y="17" width="26" height="26" fill="#ffffff"/>
+    <rect x="24" y="24" width="12" height="12" fill="#2e2117"/>
+  </g>
+  <!-- Finder pattern: top-right -->
+  <g>
+    <rect x="150" y="10" width="40" height="40" fill="#2e2117"/>
+    <rect x="157" y="17" width="26" height="26" fill="#ffffff"/>
+    <rect x="164" y="24" width="12" height="12" fill="#2e2117"/>
+  </g>
+  <!-- Finder pattern: bottom-left -->
+  <g>
+    <rect x="10" y="150" width="40" height="40" fill="#2e2117"/>
+    <rect x="17" y="157" width="26" height="26" fill="#ffffff"/>
+    <rect x="24" y="164" width="12" height="12" fill="#2e2117"/>
+  </g>
+
+  <!-- scattered data modules -->
+  <g fill="#2e2117">
+    <rect x="60" y="15" width="8" height="8"/>
+    <rect x="76" y="15" width="8" height="8"/>
+    <rect x="92" y="25" width="8" height="8"/>
+    <rect x="60" y="35" width="8" height="8"/>
+    <rect x="108" y="15" width="8" height="8"/>
+    <rect x="124" y="35" width="8" height="8"/>
+    <rect x="15" y="60" width="8" height="8"/>
+    <rect x="35" y="76" width="8" height="8"/>
+    <rect x="15" y="92" width="8" height="8"/>
+    <rect x="35" y="108" width="8" height="8"/>
+    <rect x="60" y="60" width="8" height="8"/>
+    <rect x="155" y="60" width="8" height="8"/>
+    <rect x="170" y="76" width="8" height="8"/>
+    <rect x="155" y="92" width="8" height="8"/>
+    <rect x="175" y="108" width="8" height="8"/>
+    <rect x="60" y="155" width="8" height="8"/>
+    <rect x="76" y="170" width="8" height="8"/>
+    <rect x="92" y="155" width="8" height="8"/>
+    <rect x="108" y="175" width="8" height="8"/>
+    <rect x="155" y="155" width="8" height="8"/>
+    <rect x="170" y="170" width="8" height="8"/>
+    <rect x="155" y="180" width="8" height="8"/>
+    <rect x="180" y="155" width="8" height="8"/>
+  </g>
+
+  <!-- Center placeholder badge -->
+  <rect x="55" y="80" width="90" height="40" rx="6" fill="#ffffff" stroke="#b6783c" stroke-width="2"/>
+  <text x="100" y="98" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#b6783c">请替换为</text>
+  <text x="100" y="112" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#b6783c">微信二维码</text>
+</svg>
