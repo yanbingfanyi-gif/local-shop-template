@@ -1,103 +1,51 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="warm">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{店名}} | {{一句话定位}}</title>
+  <title>Loading...</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--
     ============================================================
-    通用商家网站模板 — 占位符清单 (Placeholder Reference)
+    通用企业官网 Starter Kit
     ============================================================
-    使用前请全局搜索并替换以下占位符：
+    这是一个零依赖、纯静态的网站模板。所有可变内容（站点名称、
+    Logo、配色、导航、联系方式、各页面文案）都集中在
+    assets/js/config.js 中，由 assets/js/script.js 在页面加载时
+    读取并渲染到下方各个容器里。
 
-    【全局信息】（每个占位符在全文中重复出现，替换一次即可全部生效）
-      {{店名}}              店铺名称
-      {{一句话定位}}         一句话品牌定位 / 标语
-      {{详细地址}}           门店地址（单行）
-      {{地图跳转链接}}        点击后跳转的地图导航链接（高德/百度/Google 地图分享链接）
-      {{电话号码}}           联系电话（用于 tel: 链接）
-      {{微信号}}             微信号 / 微信号二维码下方文字
-      {{周一至周五营业时间}}   例如 09:00 - 21:00
-      {{周末营业时间}}        例如 09:00 - 22:00
-      {{节假日营业时间}}      例如 10:00 - 22:00
-      {{页脚品牌简介}}        页脚一句话品牌介绍
-      {{年份}}               版权年份
-
-    【首页卖点】（3 个）
-      {{首页卖点1}} {{首页卖点2}} {{首页卖点3}}
-
-    【品牌故事】
-      {{品牌故事标题}} {{品牌理念引言}} {{创始人/负责人姓名}}
-      {{品牌故事正文第一段}} {{品牌故事正文第二段}}
-
-    【菜单分类】（4 个分类标签）
-      {{菜单分类1}} {{菜单分类2}} {{菜单分类3}} {{菜单分类4}}
-
-    【菜单品项】（共 8 项，每项含名称/价格/描述/2 个标签）
-      {{品项N名称}} {{品项N价格}} {{品项N描述}} {{品项N标签1}} {{品项N标签2}}  (N = 1-8)
-
-    【环境展示】（6 张图说明）
-      {{环境图片N说明}}  (N = 1-6)
-
-    【顾客评价】（3 条）
-      {{顾客N姓名}} {{顾客N评价}} {{顾客N信息}} {{顾客N来源}}  (N = 1-3)
-
-    【微信二维码】
-      assets/wechat-qr-placeholder.svg → 替换为客户真实的微信二维码图片
-      {{微信二维码说明文字}}
-
-    【配色方案】
-      默认：data-theme="warm"  暖木色 / 奶咖调（咖啡馆感）
-      切换：data-theme="fresh" 清爽白 / 绿（茶饮轻食感）
-      也可通过页面右上角的配色切换按钮预览两种方案，
-      确定后可直接修改 <html> 的 data-theme 并删除切换按钮。
-
-    【交付前清理】
-      - <body> 顶部的 "DEMO-ONLY VALUE BANNER" (🚀 3-Day Delivery...)
-        仅用于作品展示/获客，正式交付客户前请删除该 <div>。
+    换一个客户 / 换一个行业，只需要编辑 config.js，
+    不需要改动本文件、style.css 或 script.js。
     ============================================================
   -->
 </head>
 <body>
 
-  <!-- ⚠️ DEMO-ONLY VALUE BANNER — remove this block before delivering a customized site to a client -->
-  <div style="background:var(--accent);color:#fff;padding:12px;text-align:center;font-size:14px;font-weight:600;">
-    🚀 3-Day Delivery for Local Shops | Mobile-First | No Coding Needed
-  </div>
+  <!-- 作品展示横幅 — 内容/显示与否由 config.js 的 meta.demoBanner 控制 -->
+  <div id="demoBanner"></div>
 
   <div id="progress-bar"></div>
 
   <!-- ── TOPBAR ── -->
   <div id="topbar">
     <div class="container topbar-inner">
-      <span>📍 {{详细地址}}</span>
+      <span id="topbarAddress"></span>
       <span class="topbar-divider">|</span>
-      <span>📞 {{电话号码}}</span>
+      <span id="topbarPhone"></span>
       <span class="topbar-divider">|</span>
-      <span>🕐 {{周一至周五营业时间}}</span>
+      <span id="topbarHours"></span>
     </div>
   </div>
 
   <!-- ── NAVBAR ── -->
   <nav id="navbar">
     <div class="container nav-inner">
-      <a href="#hero" class="nav-logo">{{店名}}</a>
-      <ul class="nav-links">
-        <li><a href="#about">关于我们</a></li>
-        <li><a href="#menu">菜单</a></li>
-        <li><a href="#gallery">环境展示</a></li>
-        <li><a href="#reviews">顾客评价</a></li>
-        <li><a href="#visit">到店信息</a></li>
-        <li><a href="tel:{{电话号码}}" class="btn-call">📞 致电我们</a></li>
-      </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="切换配色方案" title="切换配色方案">
-        <span class="theme-dot theme-dot-warm"></span>
-        <span class="theme-dot theme-dot-fresh"></span>
-      </button>
+      <a href="#hero" class="nav-logo" id="navLogo"></a>
+      <ul class="nav-links" id="navLinks"></ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换配色方案" title="切换配色方案"></button>
       <button class="hamburger" id="hamburger" aria-label="菜单">
         <span></span><span></span><span></span>
       </button>
@@ -109,20 +57,14 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-eyebrow fade-in">欢迎光临</p>
-      <h1 class="hero-title fade-in">{{店名}}</h1>
-      <p class="hero-desc fade-in">{{一句话定位}}</p>
+      <p class="hero-eyebrow fade-in" id="heroEyebrow"></p>
+      <h1 class="hero-title fade-in" id="heroTitle"></h1>
+      <p class="hero-desc fade-in" id="heroDesc"></p>
       <div class="hero-cta fade-in">
-        <a href="#menu" class="btn btn-primary">查看菜单</a>
-        <a href="{{地图跳转链接}}" target="_blank" rel="noopener" class="btn btn-outline-white">立即导航</a>
+        <a href="#" class="btn btn-primary" id="heroCtaPrimary"></a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-outline-white" id="heroCtaSecondary"></a>
       </div>
-      <div class="hero-highlights fade-in">
-        <div class="highlight">🌱 <span>{{首页卖点1}}</span></div>
-        <div class="highlight-divider">|</div>
-        <div class="highlight">✨ <span>{{首页卖点2}}</span></div>
-        <div class="highlight-divider">|</div>
-        <div class="highlight">⭐ <span>{{首页卖点3}}</span></div>
-      </div>
+      <div class="hero-highlights fade-in" id="heroHighlights"></div>
     </div>
     <a href="#about" class="scroll-hint">
       <span>向下滑动</span>
@@ -136,157 +78,41 @@
       <div class="about-grid">
         <div class="about-images fade-in">
           <div class="img-main img-placeholder">
-            <span class="ph-icon">☕</span>
-            <span class="ph-label">建议替换：店内环境实拍图</span>
+            <span class="ph-icon">🖼️</span>
+            <span class="ph-label">建议替换：品牌相关实拍图</span>
           </div>
           <div class="img-secondary img-placeholder">
-            <span class="ph-icon">🌿</span>
+            <span class="ph-icon">🖼️</span>
           </div>
           <div class="img-badge">
-            <span class="badge-num counter" data-target="5" data-suffix="">0</span>
-            <span class="badge-txt">年<br/>用心经营</span>
+            <span class="badge-num counter" id="aboutBadgeNum">0</span>
+            <span class="badge-txt" id="aboutBadgeTxt"></span>
           </div>
         </div>
         <div class="about-text fade-in">
-          <p class="section-eyebrow">关于我们</p>
-          <h2 class="section-title-left">{{品牌故事标题}}</h2>
-          <p class="about-quote">"{{品牌理念引言}}"</p>
-          <p class="about-attr">— {{创始人/负责人姓名}}</p>
-          <p>{{品牌故事正文第一段}}</p>
-          <p>{{品牌故事正文第二段}}</p>
-          <div class="about-stats">
-            <div class="astat"><span class="astat-num counter" data-target="5" data-suffix="">0</span><span class="astat-lbl">用心经营 (年)</span></div>
-            <div class="astat"><span class="astat-num counter" data-target="20" data-suffix="+">0</span><span class="astat-lbl">招牌产品</span></div>
-            <div class="astat"><span class="astat-num counter" data-target="500" data-suffix="+" data-format="comma">0</span><span class="astat-lbl">好评顾客</span></div>
-            <div class="astat"><span class="astat-num counter" data-target="98" data-suffix="%">0</span><span class="astat-lbl">回头客比例</span></div>
-          </div>
-          <a href="#menu" class="btn btn-primary">查看菜单</a>
+          <p class="section-eyebrow" id="aboutEyebrow"></p>
+          <h2 class="section-title-left" id="aboutTitle"></h2>
+          <p class="about-quote" id="aboutQuote"></p>
+          <p class="about-attr" id="aboutAuthor"></p>
+          <div id="aboutParagraphs"></div>
+          <div class="about-stats" id="aboutStats"></div>
+          <a href="#services" class="btn btn-primary">查看服务项目</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── MENU ── -->
-  <section id="menu" class="section section-dark">
+  <!-- ── SERVICES ── -->
+  <section id="services" class="section section-dark">
     <div class="container">
-      <p class="section-eyebrow center fade-in">精心呈现</p>
-      <h2 class="section-title fade-in">菜单一览</h2>
-      <p class="section-desc fade-in" style="color:rgba(255,255,255,.6)">
-        {{菜单简介文案}}
-      </p>
-      <div class="menu-tabs fade-in">
-        <button class="mtab active" data-cat="all">全部</button>
-        <button class="mtab" data-cat="cat1">{{菜单分类1}}</button>
-        <button class="mtab" data-cat="cat2">{{菜单分类2}}</button>
-        <button class="mtab" data-cat="cat3">{{菜单分类3}}</button>
-        <button class="mtab" data-cat="cat4">{{菜单分类4}}</button>
-      </div>
-      <div class="menu-grid" id="menuGrid">
-
-        <!-- 分类一 -->
-        <div class="menu-item fade-in" data-cat="cat1">
-          <div class="menu-item-img"><span class="menu-icon">☕</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项1名称}}</h3>
-              <span class="menu-price">¥{{品项1价格}}</span>
-            </div>
-            <p>{{品项1描述}}</p>
-            <div class="menu-tags"><span>{{品项1标签1}}</span><span>{{品项1标签2}}</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item fade-in" data-cat="cat1">
-          <div class="menu-item-img"><span class="menu-icon">🧋</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项2名称}}</h3>
-              <span class="menu-price">¥{{品项2价格}}</span>
-            </div>
-            <p>{{品项2描述}}</p>
-            <div class="menu-tags"><span>{{品项2标签1}}</span><span>{{品项2标签2}}</span></div>
-          </div>
-        </div>
-
-        <!-- 分类二 -->
-        <div class="menu-item fade-in" data-cat="cat2">
-          <div class="menu-item-img"><span class="menu-icon">🥪</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项3名称}}</h3>
-              <span class="menu-price">¥{{品项3价格}}</span>
-            </div>
-            <p>{{品项3描述}}</p>
-            <div class="menu-tags"><span>{{品项3标签1}}</span><span>{{品项3标签2}}</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item fade-in" data-cat="cat2">
-          <div class="menu-item-img"><span class="menu-icon">🥗</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项4名称}}</h3>
-              <span class="menu-price">¥{{品项4价格}}</span>
-            </div>
-            <p>{{品项4描述}}</p>
-            <div class="menu-tags"><span>{{品项4标签1}}</span><span>{{品项4标签2}}</span></div>
-          </div>
-        </div>
-
-        <!-- 分类三 -->
-        <div class="menu-item fade-in" data-cat="cat3">
-          <div class="menu-item-img"><span class="menu-icon">🍰</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项5名称}}</h3>
-              <span class="menu-price">¥{{品项5价格}}</span>
-            </div>
-            <p>{{品项5描述}}</p>
-            <div class="menu-tags"><span>{{品项5标签1}}</span><span>{{品项5标签2}}</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item fade-in" data-cat="cat3">
-          <div class="menu-item-img"><span class="menu-icon">🥐</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项6名称}}</h3>
-              <span class="menu-price">¥{{品项6价格}}</span>
-            </div>
-            <p>{{品项6描述}}</p>
-            <div class="menu-tags"><span>{{品项6标签1}}</span><span>{{品项6标签2}}</span></div>
-          </div>
-        </div>
-
-        <!-- 分类四 -->
-        <div class="menu-item fade-in" data-cat="cat4">
-          <div class="menu-item-img"><span class="menu-icon">🍵</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项7名称}}</h3>
-              <span class="menu-price">¥{{品项7价格}}</span>
-            </div>
-            <p>{{品项7描述}}</p>
-            <div class="menu-tags"><span>{{品项7标签1}}</span><span>{{品项7标签2}}</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item fade-in" data-cat="cat4">
-          <div class="menu-item-img"><span class="menu-icon">🍮</span></div>
-          <div class="menu-item-body">
-            <div class="menu-top">
-              <h3>{{品项8名称}}</h3>
-              <span class="menu-price">¥{{品项8价格}}</span>
-            </div>
-            <p>{{品项8描述}}</p>
-            <div class="menu-tags"><span>{{品项8标签1}}</span><span>{{品项8标签2}}</span></div>
-          </div>
-        </div>
-
-      </div>
+      <p class="section-eyebrow center fade-in" id="servicesEyebrow"></p>
+      <h2 class="section-title fade-in" id="servicesTitle"></h2>
+      <p class="section-desc fade-in" style="color:rgba(255,255,255,.6)" id="servicesIntro"></p>
+      <div class="menu-tabs fade-in" id="servicesTabs"></div>
+      <div class="menu-grid" id="servicesGrid"></div>
       <div class="menu-footer fade-in">
-        <p>{{菜单备注文案}}</p>
-        <a href="tel:{{电话号码}}" class="btn btn-primary">致电预订 / 咨询</a>
+        <p id="servicesFooterNote"></p>
+        <a href="#" class="btn btn-primary" id="servicesFooterCta">致电预订 / 咨询</a>
       </div>
     </div>
   </section>
@@ -294,110 +120,58 @@
   <!-- ── GALLERY ── -->
   <section id="gallery" class="section">
     <div class="container">
-      <p class="section-eyebrow center fade-in">环境展示</p>
-      <h2 class="section-title fade-in">走进 {{店名}}</h2>
-      <div class="gallery-grid fade-in">
-        <div class="gal-item gal-large"><div class="gal-img gal-1"><span class="gal-icon">🛋️</span></div><div class="gal-overlay"><span>{{环境图片1说明}}</span></div></div>
-        <div class="gal-item"><div class="gal-img gal-2"><span class="gal-icon">☕</span></div><div class="gal-overlay"><span>{{环境图片2说明}}</span></div></div>
-        <div class="gal-item"><div class="gal-img gal-3"><span class="gal-icon">🪴</span></div><div class="gal-overlay"><span>{{环境图片3说明}}</span></div></div>
-        <div class="gal-item"><div class="gal-img gal-4"><span class="gal-icon">🥐</span></div><div class="gal-overlay"><span>{{环境图片4说明}}</span></div></div>
-        <div class="gal-item gal-wide"><div class="gal-img gal-5"><span class="gal-icon">🪟</span></div><div class="gal-overlay"><span>{{环境图片5说明}}</span></div></div>
-        <div class="gal-item"><div class="gal-img gal-6"><span class="gal-icon">🎨</span></div><div class="gal-overlay"><span>{{环境图片6说明}}</span></div></div>
-      </div>
+      <p class="section-eyebrow center fade-in" id="galleryEyebrow"></p>
+      <h2 class="section-title fade-in" id="galleryTitle"></h2>
+      <div class="gallery-grid fade-in" id="galleryGrid"></div>
     </div>
   </section>
 
   <!-- ── REVIEWS ── -->
   <section id="reviews" class="section section-dark">
     <div class="container">
-      <p class="section-eyebrow center fade-in">真实反馈</p>
-      <h2 class="section-title fade-in">顾客怎么说</h2>
-      <div class="reviews-grid">
-
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"{{顾客1评价}}"</p>
-          <div class="review-author">
-            <div class="review-avatar review-avatar-1">{{顾客1姓名首字}}</div>
-            <div>
-              <strong>{{顾客1姓名}}</strong>
-              <span>{{顾客1信息}}</span>
-            </div>
-            <div class="review-source">{{顾客1来源}}</div>
-          </div>
-        </div>
-
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"{{顾客2评价}}"</p>
-          <div class="review-author">
-            <div class="review-avatar review-avatar-2">{{顾客2姓名首字}}</div>
-            <div>
-              <strong>{{顾客2姓名}}</strong>
-              <span>{{顾客2信息}}</span>
-            </div>
-            <div class="review-source">{{顾客2来源}}</div>
-          </div>
-        </div>
-
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"{{顾客3评价}}"</p>
-          <div class="review-author">
-            <div class="review-avatar review-avatar-3">{{顾客3姓名首字}}</div>
-            <div>
-              <strong>{{顾客3姓名}}</strong>
-              <span>{{顾客3信息}}</span>
-            </div>
-            <div class="review-source">{{顾客3来源}}</div>
-          </div>
-        </div>
-
-      </div>
-      <div class="reviews-summary fade-in">
-        <div class="rs-item"><span class="rs-num counter" data-target="4" data-suffix=".9">0</span><span class="rs-lbl">平均评分</span></div>
-        <div class="rs-item"><span class="rs-num counter" data-target="300" data-suffix="+" data-format="comma">0</span><span class="rs-lbl">累计评价</span></div>
-        <div class="rs-item"><span class="rs-num counter" data-target="95" data-suffix="%">0</span><span class="rs-lbl">好评率</span></div>
-      </div>
+      <p class="section-eyebrow center fade-in" id="reviewsEyebrow"></p>
+      <h2 class="section-title fade-in" id="reviewsTitle"></h2>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+      <div class="reviews-summary fade-in" id="reviewsSummary"></div>
     </div>
   </section>
 
   <!-- ── VISIT US ── -->
   <section id="visit" class="section section-cream">
     <div class="container">
-      <p class="section-eyebrow center fade-in">欢迎光临</p>
-      <h2 class="section-title fade-in">到店信息</h2>
-      <p class="section-desc fade-in">{{到店信息简介文案}}</p>
+      <p class="section-eyebrow center fade-in" id="visitEyebrow"></p>
+      <h2 class="section-title fade-in" id="visitTitle"></h2>
+      <p class="section-desc fade-in" id="visitIntro"></p>
       <div class="visit-grid">
 
         <div class="visit-card fade-in">
           <h3>🕐 营业时间</h3>
           <div class="hours-list">
-            <div class="hour-row"><span>周一至周五</span><span>{{周一至周五营业时间}}</span></div>
-            <div class="hour-row"><span>周六 · 周日</span><span>{{周末营业时间}}</span></div>
-            <div class="hour-row"><span>法定节假日</span><span>{{节假日营业时间}}</span></div>
+            <div class="hour-row"><span>周一至周五</span><span id="hoursWeekday"></span></div>
+            <div class="hour-row"><span>周六 · 周日</span><span id="hoursWeekend"></span></div>
+            <div class="hour-row"><span>法定节假日</span><span id="hoursHoliday"></span></div>
           </div>
         </div>
 
         <div class="visit-card fade-in">
           <h3>📍 门店地址</h3>
-          <p class="address">{{详细地址}}</p>
-          <a href="{{地图跳转链接}}" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" style="margin-top:.75rem">导航前往</a>
+          <p class="address" id="visitAddress"></p>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" id="visitMapLink" style="margin-top:.75rem">导航前往</a>
         </div>
 
         <div class="visit-card fade-in">
           <h3>📞 联系方式</h3>
-          <p>电话：<a href="tel:{{电话号码}}">{{电话号码}}</a></p>
-          <p>微信号：{{微信号}}</p>
+          <p>电话：<a href="#" id="visitPhoneLink"></a></p>
+          <p>微信号：<span id="visitWechat"></span></p>
           <button class="btn btn-outline-dark btn-sm" id="openWechat" type="button">查看微信二维码</button>
         </div>
 
         <div class="visit-card visit-qr fade-in">
           <h3>💬 扫码加微信</h3>
           <button type="button" class="qr-img-btn" id="visitQrBtn" aria-label="点击放大微信二维码">
-            <img src="assets/wechat-qr-placeholder.svg" alt="微信二维码占位图，请替换为真实二维码" class="qr-img" />
+            <img src="" alt="微信二维码占位图，请替换为真实二维码" class="qr-img" id="visitQrImg" />
           </button>
-          <p class="qr-caption">{{微信二维码说明文字}}</p>
+          <p class="qr-caption" id="visitQrCaption"></p>
         </div>
 
       </div>
@@ -409,55 +183,34 @@
     <div class="footer-top">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">{{店名}}</div>
-          <p>{{页脚品牌简介}}</p>
-          <div class="footer-socials">
-            <a href="#" aria-label="小红书">📕</a>
-            <a href="#" aria-label="大众点评">⭐</a>
-            <a href="#" aria-label="抖音">🎵</a>
-          </div>
+          <div class="footer-logo" id="footerLogo"></div>
+          <p id="footerDesc"></p>
+          <div class="footer-socials" id="footerSocials"></div>
         </div>
         <div class="footer-col">
           <h5>快速链接</h5>
-          <ul>
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#menu">菜单</a></li>
-            <li><a href="#gallery">环境展示</a></li>
-            <li><a href="#reviews">顾客评价</a></li>
-            <li><a href="#visit">到店信息</a></li>
-          </ul>
+          <ul id="footerNavLinks"></ul>
         </div>
         <div class="footer-col">
           <h5>联系我们</h5>
-          <ul class="footer-contact">
-            <li>📍 {{详细地址}}</li>
-            <li>📞 <a href="tel:{{电话号码}}">{{电话号码}}</a></li>
-            <li>🕐 {{周一至周五营业时间}}</li>
-            <li>
-              <button type="button" class="footer-wechat-btn" id="footerWechatBtn">
-                <img src="assets/wechat-qr-placeholder.svg" alt="微信二维码占位图，请替换为真实二维码" class="footer-qr-thumb" />
-                <span>💬 微信：{{微信号}}<br/><small>点击查看二维码</small></span>
-              </button>
-            </li>
-          </ul>
+          <ul class="footer-contact" id="footerContact"></ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>© {{年份}} {{店名}}. All rights reserved.</span>
-        <!-- 交付前可保留/删除以下作品署名 -->
-        <span class="footer-credit">Demo site designed &amp; built by <strong>George Wang</strong> · <a href="mailto:yanbingfanyi@gmail.com">yanbingfanyi@gmail.com</a></span>
+        <span id="footerCopyright"></span>
+        <span class="footer-credit" id="footerCredit"></span>
       </div>
     </div>
   </footer>
 
   <!-- ── MOBILE STICKY BAR ── -->
   <div class="mobile-bar">
-    <a href="tel:{{电话号码}}" class="mobile-bar-item">
+    <a href="#" class="mobile-bar-item" id="mobileBarPhone">
       <span class="mb-icon">📞</span><span class="mb-label">电话</span>
     </a>
-    <a href="{{地图跳转链接}}" target="_blank" rel="noopener" class="mobile-bar-item">
+    <a href="#" target="_blank" rel="noopener" class="mobile-bar-item" id="mobileBarMap">
       <span class="mb-icon">📍</span><span class="mb-label">导航</span>
     </a>
     <button class="mobile-bar-item" id="mobileBarWechat" type="button">
@@ -471,13 +224,14 @@
     <div class="qr-modal-content">
       <button class="qr-modal-close" id="qrModalClose" aria-label="关闭">×</button>
       <h3>扫码添加微信</h3>
-      <img src="assets/wechat-qr-placeholder.svg" alt="微信二维码占位图，请替换为真实二维码" />
-      <p>微信号：{{微信号}}</p>
+      <img src="" alt="微信二维码占位图，请替换为真实二维码" id="qrModalImg" />
+      <p>微信号：<span id="qrModalWechat"></span></p>
     </div>
   </div>
 
   <button id="back-to-top" aria-label="回到顶部">↑</button>
 
-  <script src="script.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
