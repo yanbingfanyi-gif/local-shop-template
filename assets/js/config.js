@@ -211,7 +211,7 @@ window.SITE_CONFIG = {
 
   /* ── 页脚 ── */
   footer: {
-    description: "页脚品牌简介占位文字，简要介绍公司定位与服务范围。",
+    description: "服务承诺：​ 7×12 小时技术支持 · 国内极速访问 · 终身免费换图",
     socials: [
       { icon: "📕", label: "小红书", href: "#" },
       { icon: "⭐", label: "大众点评", href: "#" },
