@@ -148,7 +148,7 @@
       <div class="menu-item-body">
         <div class="menu-top">
           <h3>${item.name}</h3>
-          <span class="menu-price">¥${item.price}</span>
+          <span class="menu-price">${CFG.meta.currency}${item.price}</span>
         </div>
         <p>${item.desc}</p>
         <div class="menu-tags">${item.tags.map(t => `<span>${t}</span>`).join('')}</div>
@@ -221,6 +221,29 @@
 
   document.getElementById('visitQrImg').src = CFG.contact.wechatQrImage;
   document.getElementById('visitQrCaption').textContent = CFG.contact.wechatQrCaption;
+
+  /* ============================================================
+   * Render — Careers / Join Us
+   * ============================================================ */
+  const careers = CFG.pages.careers;
+  document.getElementById('careersEyebrow').textContent = careers.eyebrow;
+  document.getElementById('careersTitle').textContent = careers.title;
+  document.getElementById('careersIntro').textContent = careers.intro;
+
+  document.getElementById('careersGrid').innerHTML = careers.manuals.map(m => `
+    <div class="career-card fade-in">
+      <div class="career-card-head">
+        <div class="career-icon">${m.icon}</div>
+        <h3>${m.name}</h3>
+      </div>
+      <p class="career-card-desc">${m.desc}</p>
+      <ul class="career-points">${m.points.map(p => `<li>${p}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  document.getElementById('careersCtaText').textContent = careers.ctaText;
+  const careersCtaBtn = document.getElementById('careersCtaBtn');
+  careersCtaBtn.textContent = careers.ctaLabel;
+  careersCtaBtn.href = `tel:${CFG.contact.phone}`;
 
   /* ============================================================
    * Render — Footer
