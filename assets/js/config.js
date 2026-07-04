@@ -1,35 +1,34 @@
 /* ============================================================
- * 通用企业官网 Starter Kit — 站点配置
+ * Local Business Website Starter Kit — Site Configuration
  * ============================================================
- * 这是整个网站唯一需要修改的文件。
- * 换一个客户 / 换一个行业，只需要改这里的内容和颜色，
- * 不需要碰 index.html、style.css 或 script.js。
+ * This is the ONLY file you need to edit.
+ * Change the client, change the industry — just update this
+ * file. No touching index.html, style.css, or script.js.
  *
- * 使用纯 <script> 全局变量（非 ES module），
- * 这样直接双击 index.html 用浏览器打开也能正常运行，
- * 不需要本地服务器或 npm run dev。
+ * Uses plain <script> globals (not ES modules) so you can
+ * open index.html directly in a browser — no local server or
+ * npm run dev required.
  * ============================================================ */
 
 window.SITE_CONFIG = {
 
-  /* ── 基本信息 ── */
+  /* ── Basic Info ── */
   meta: {
-    siteName: "示例企业",
-    tagline: "一句话品牌定位 / 标语",
-    logoUrl: "", // 留空 = 使用 siteName 作为文字 Logo；填图片路径则显示图片 Logo
-    currency: "$", // 服务价格的货币符号，例如 "¥" / "$" / "€"
-    // 顶部作品展示横幅，交付给真实客户前可将 show 设为 false
+    siteName: "Your Business Name",
+    tagline: "Your one-line brand tagline goes here",
+    logoUrl: "", // leave empty = text logo; set an image path to show a logo image
+    currency: "$", // currency symbol for service prices, e.g. "¥" / "$" / "€"
+    // demo banner shown at the top — set show: false before delivering to a real client
     demoBanner: { show: true, text: "🚀 3-Day Delivery for Local Shops | Mobile-First | No Coding Needed" },
   },
 
-  /* ── 主题配色 ──
-   * active 指向 presets 中的某一个 key。
-   * 改 primaryColor 即可让全站按钮、链接、Hover 效果同步变化；
-   * 也可以整组替换 preset，一次性更换网站皮肤。
-   * 新增预设：复制一份 warm 或 fresh，改个名字加进 presets 即可，
-   * 配色切换按钮会自动识别全部预设。 */
+  /* ── Color Themes ──
+   * active points to one of the preset keys below.
+   * Changing primaryColor updates buttons, links, and hover effects site-wide.
+   * To add a new preset: copy "warm" or "fresh", give it a new key — the
+   * theme-switcher button auto-discovers all presets. */
   theme: {
-    active: "warm", // "warm" | "fresh" | 自定义预设名
+    active: "warm", // "warm" | "fresh" | any custom preset name
 
     presets: {
       warm: {
@@ -61,164 +60,164 @@ window.SITE_CONFIG = {
     },
   },
 
-  /* ── 顶部导航 ── */
+  /* ── Top Navigation ── */
   navLinks: [
-    { label: "关于我们", href: "#about" },
-    { label: "服务项目", href: "#services" },
-    { label: "环境展示", href: "#gallery" },
-    { label: "顾客评价", href: "#reviews" },
-    { label: "到店信息", href: "#visit" },
-    { label: "加入我们", href: "#careers" },
+    { label: "About",    href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Gallery",  href: "#gallery" },
+    { label: "Reviews",  href: "#reviews" },
+    { label: "Visit Us", href: "#visit" },
+    { label: "Join Us",  href: "#careers" },
   ],
 
-  /* ── 联系方式（多处复用：顶部条 / 导航 / 到店信息 / 页脚 / 移动端悬浮条） ── */
+  /* ── Contact Info (reused in header / nav / visit section / footer / mobile bar) ── */
   contact: {
-    address: "{{详细地址}}",
-    mapUrl:  "{{地图跳转链接}}",
-    phone:   "{{电话号码}}",
-    wechat:  "{{微信号}}",
+    address: "123 Main Street, Your City, State 00000",
+    mapUrl:  "https://maps.google.com/?q=your+business+address",
+    phone:   "+1 (555) 000-0000",
+    wechat:  "+1 (555) 000-0000",
     wechatQrImage: "assets/img/wechat-qr-placeholder.svg",
-    wechatQrCaption: "扫码添加企业微信",
+    wechatQrCaption: "Scan to connect on WhatsApp",
     hours: {
-      weekday: "{{周一至周五营业时间}}",
-      weekend: "{{周末营业时间}}",
-      holiday: "{{节假日营业时间}}",
+      weekday: "Mon – Fri: 9:00 AM – 6:00 PM",
+      weekend: "Sat – Sun: 10:00 AM – 5:00 PM",
+      holiday: "Public Holidays: By appointment",
     },
   },
 
-  /* ── 各页面内容 ── */
+  /* ── Page Content ── */
   pages: {
 
     home: {
       hero: {
-        eyebrow: "欢迎光临",
-        title: "示例企业",
-        desc: "一句话品牌定位 / 标语，介绍你的核心业务和价值主张。",
-        ctaPrimary:   { label: "查看服务项目", href: "#services" },
-        ctaSecondary: { label: "立即导航" }, // href 自动取自 contact.mapUrl
+        eyebrow: "Welcome",
+        title: "Your Business Name",
+        desc: "Your one-line brand tagline — introduce your core service and value proposition here.",
+        ctaPrimary:   { label: "View Our Services", href: "#services" },
+        ctaSecondary: { label: "Get Directions" }, // href auto-filled from contact.mapUrl
         highlights: [
-          { icon: "🌱", text: "核心卖点一" },
-          { icon: "✨", text: "核心卖点二" },
-          { icon: "⭐", text: "核心卖点三" },
+          { icon: "🌱", text: "Key selling point one" },
+          { icon: "✨", text: "Key selling point two" },
+          { icon: "⭐", text: "Key selling point three" },
         ],
       },
     },
 
     about: {
-      eyebrow: "关于我们",
-      title: "品牌故事标题",
-      quote: "品牌理念 / 一句话宣言",
-      author: "创始人 / 负责人姓名",
+      eyebrow: "About Us",
+      title: "Our Story",
+      quote: "Your brand philosophy or one-line mission statement",
+      author: "Founder / Owner Name",
       paragraphs: [
-        "品牌故事正文第一段：介绍公司的起源、使命和核心价值观，让客户了解你的故事。",
-        "品牌故事正文第二段：介绍团队、专业能力或服务范围，建立信任感。",
+        "Tell your story here — your origins, mission, and core values. Let customers know who you are and why you do what you do.",
+        "Introduce your team, expertise, or service range. Build trust with a second paragraph that highlights what makes you different.",
       ],
       stats: [
-        { target: 5,   suffix: "",  label: "用心经营 (年)" },
-        { target: 20,  suffix: "+", label: "核心服务" },
-        { target: 500, suffix: "+", label: "好评客户", format: "comma" },
-        { target: 98,  suffix: "%", label: "回头客比例" },
+        { target: 5,   suffix: "",  label: "Years in Business" },
+        { target: 20,  suffix: "+", label: "Core Services" },
+        { target: 500, suffix: "+", label: "Happy Clients", format: "comma" },
+        { target: 98,  suffix: "%", label: "Repeat Customer Rate" },
       ],
     },
 
     services: {
-      eyebrow: "精心呈现",
-      title: "服务项目一览",
-      intro: "服务简介文案占位：用一两句话概括你的服务亮点和适用人群。",
+      eyebrow: "What We Offer",
+      title: "Our Services",
+      intro: "A brief introduction to your services — one or two sentences covering your highlights and who you serve.",
       categories: [
-        { id: "cat1", label: "分类一" },
-        { id: "cat2", label: "分类二" },
-        { id: "cat3", label: "分类三" },
-        { id: "cat4", label: "分类四" },
+        { id: "cat1", label: "Category One" },
+        { id: "cat2", label: "Category Two" },
+        { id: "cat3", label: "Category Three" },
+        { id: "cat4", label: "Category Four" },
       ],
       items: [
-        { cat: "cat1", icon: "💼", name: "服务项目 1", price: "9.99", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat1", icon: "📋", name: "服务项目 2", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat2", icon: "🤝", name: "服务项目 3", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat2", icon: "📈", name: "服务项目 4", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat3", icon: "🎯", name: "服务项目 5", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat3", icon: "💡", name: "服务项目 6", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat4", icon: "🏆", name: "服务项目 7", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
-        { cat: "cat4", icon: "📊", name: "服务项目 8", price: "XXX", desc: "服务描述占位文字，介绍这项服务包含的内容。", tags: ["标签A", "标签B"] },
+        { cat: "cat1", icon: "💼", name: "Service Item 1", price: "9.99", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat1", icon: "📋", name: "Service Item 2", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat2", icon: "🤝", name: "Service Item 3", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat2", icon: "📈", name: "Service Item 4", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat3", icon: "🎯", name: "Service Item 5", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat3", icon: "💡", name: "Service Item 6", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat4", icon: "🏆", name: "Service Item 7", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
+        { cat: "cat4", icon: "📊", name: "Service Item 8", price: "XXX", desc: "Short description of this service — what's included and who it's for.", tags: ["Tag A", "Tag B"] },
       ],
-      footerNote: "如需了解更多服务详情或获取报价，欢迎致电咨询。",
+      footerNote: "Want to learn more or get a quote? Give us a call — we're happy to help.",
     },
 
     gallery: {
-      eyebrow: "环境展示",
-      title: "走进我们",
+      eyebrow: "Our Space",
+      title: "Take a Look Inside",
       items: [
-        { icon: "🛋️", caption: "环境图片1说明" },
-        { icon: "💼", caption: "环境图片2说明" },
-        { icon: "🪴", caption: "环境图片3说明" },
-        { icon: "🖥️", caption: "环境图片4说明" },
-        { icon: "🪟", caption: "环境图片5说明" },
-        { icon: "🎨", caption: "环境图片6说明" },
+        { icon: "🛋️", caption: "Interior photo caption 1" },
+        { icon: "💼", caption: "Interior photo caption 2" },
+        { icon: "🪴", caption: "Interior photo caption 3" },
+        { icon: "🖥️", caption: "Interior photo caption 4" },
+        { icon: "🪟", caption: "Interior photo caption 5" },
+        { icon: "🎨", caption: "Interior photo caption 6" },
       ],
     },
 
     reviews: {
-      eyebrow: "真实反馈",
-      title: "客户怎么说",
+      eyebrow: "What Clients Say",
+      title: "Real Feedback",
       items: [
-        { name: "李女士", initial: "业主", info: "绿地城小区", source: "大众点评", text: "设计师很专业，把我家那个奇葩户型改造得特别合理，施工队也很负责，推荐！" },
-        { name: "张先生", initial: "业主", info: "保利心语", source: "微信朋友圈", text: "报价透明，没有隐形收费，工期卡得很准，比预期提前了一周竣工，手艺不错" },
-        { name: "客户 3", initial: "C", info: "客户3信息", source: "来源平台", text: "客户3评价内容占位文字，简短真实的使用感受。" },
+        { name: "Sarah M.", initial: "S", info: "Downtown District", source: "Google Reviews", text: "Absolutely professional team. They transformed our space beyond expectations — highly recommend to anyone looking for quality work." },
+        { name: "James T.", initial: "J", info: "Riverside Area", source: "Yelp", text: "Transparent pricing, no hidden fees, and they finished ahead of schedule. The craftsmanship is excellent." },
+        { name: "Client Name", initial: "C", info: "Client location", source: "Platform name", text: "Placeholder review text — a short, genuine testimonial from a happy customer." },
       ],
       summary: { rating: 4.9, totalCount: 300, satisfaction: 95 },
     },
 
     visit: {
-      eyebrow: "欢迎光临",
-      title: "到店信息",
-      intro: "到店信息简介文案占位：营业时间、地址、联系方式一目了然。",
+      eyebrow: "Come See Us",
+      title: "Visit Us",
+      intro: "Find our hours, address, and contact details below — everything you need to plan your visit.",
     },
 
     careers: {
-      eyebrow: "加入我们",
-      title: "团队培训与品牌标准",
-      intro: "我们重视每一位成员的成长，也重视品牌形象的统一。以下是内部《员工手册》与《品牌标准手册》的部分节选，帮助新伙伴快速融入团队、保持专业一致的服务与形象。",
+      eyebrow: "Join Our Team",
+      title: "Team Training & Brand Standards",
+      intro: "We care about every team member's growth and maintaining a consistent brand experience. Below are excerpts from our internal Staff Handbook and Brand Standards Guide to help new members get up to speed quickly.",
       manuals: [
         {
           icon: "📘",
-          name: "员工手册（节选）",
-          desc: "新成员入职第一周即可查阅的基础规范，统一服务标准、减少重复培训成本。",
+          name: "Staff Handbook (Excerpt)",
+          desc: "Core guidelines new members can reference in their first week — standardizing service and reducing repeat training.",
           points: [
-            "服务理念：保持微笑，主动问候每一位进店的顾客，耐心解答疑问。",
-            "仪容仪表：统一着装与工牌，保持整洁干净，符合品牌形象。",
-            "考勤与排班：提前10分钟到岗，请假需提前1天通过指定渠道申请。",
-            "岗位职责：开店/打烊清单、收银流程、卫生检查标准均有书面记录。",
-            "成长路径：完成基础培训后可申请轮岗或晋升评估，标准公开透明。",
+            "Service Philosophy: Greet every customer with a smile, be proactive, and answer questions patiently.",
+            "Appearance: Wear the uniform and name badge; keep a clean, professional appearance consistent with the brand.",
+            "Attendance: Arrive 10 minutes before your shift; request time off at least 1 day in advance through the designated channel.",
+            "Responsibilities: Opening/closing checklists, POS procedures, and sanitation standards are all documented.",
+            "Growth Path: After completing basic training, apply for rotation or promotion review — criteria are transparent and public.",
           ],
         },
         {
           icon: "🎨",
-          name: "品牌标准手册（节选）",
-          desc: "统一对外形象与表达方式，让每一位成员都能代表品牌与顾客沟通。",
+          name: "Brand Standards Guide (Excerpt)",
+          desc: "Unify our external image and communication so every team member represents the brand consistently.",
           points: [
-            "Logo规范：标准版/单色版分别适用的背景与场景，禁止拉伸变形。",
-            "色彩与字体：主色、辅助色及标题/正文字体的固定搭配规则。",
-            "文案语气：对外表达统一使用亲切、专业的语气，避免随意缩写。",
-            "视觉规范：门店物料与社交媒体发布的统一构图、配色与排版模板。",
-            "沟通话术：价格、营业时间、退换货等常见问题的标准回复模板。",
+            "Logo Usage: Know when to use the standard vs. monochrome version; never stretch or distort the logo.",
+            "Colors & Fonts: Stick to the defined primary/accent colors and heading/body font pairings.",
+            "Tone of Voice: Use a warm, professional tone in all external communications; avoid casual abbreviations.",
+            "Visual Standards: Follow the unified layout, color, and typesetting templates for in-store materials and social posts.",
+            "Common Scripts: Use standard responses for pricing, hours, and return/refund questions.",
           ],
         },
       ],
-      ctaText: "想成为我们的一员？欢迎与我们联系，了解更多职位信息。",
-      ctaLabel: "致电咨询",
+      ctaText: "Interested in joining our team? Reach out to learn about open positions.",
+      ctaLabel: "Call Us",
     },
   },
 
-  /* ── 页脚 ── */
+  /* ── Footer ── */
   footer: {
-    description: "服务承诺：​ 7×12 小时技术支持 · 国内极速访问 · 终身免费换图",
+    description: "Your service promise — fast response, reliable delivery, satisfaction guaranteed.",
     socials: [
-      { icon: "📕", label: "小红书", href: "#" },
-      { icon: "⭐", label: "大众点评", href: "#" },
-      { icon: "🎵", label: "抖音", href: "#" },
+      { icon: "📸", label: "Instagram", href: "#" },
+      { icon: "⭐", label: "Google",    href: "#" },
+      { icon: "👍", label: "Facebook",  href: "#" },
     ],
     copyrightYear: 2026,
-    // 作品署名：交付给真实客户前可将 show 设为 false
+    // demo credit — set show: false before delivering to a real client
     credit: { show: true, name: "George Wang", email: "yanbingfanyi@gmail.com" },
   },
 

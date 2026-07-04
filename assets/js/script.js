@@ -70,7 +70,7 @@
 
   const navLinksEl = document.getElementById('navLinks');
   navLinksEl.innerHTML = CFG.navLinks.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')
-    + `<li><a href="tel:${CFG.contact.phone}" class="btn-call">📞 致电我们</a></li>`;
+    + `<li><a href="tel:${CFG.contact.phone}" class="btn-call">📞 Call Us</a></li>`;
 
   const themeToggle = document.getElementById('themeToggle');
   themeToggle.innerHTML = presetNames.map(name => {
@@ -139,7 +139,7 @@
   document.getElementById('servicesFooterNote').textContent = services.footerNote;
   document.getElementById('servicesFooterCta').href = `tel:${CFG.contact.phone}`;
 
-  document.getElementById('servicesTabs').innerHTML = `<button class="mtab active" data-cat="all">全部</button>`
+  document.getElementById('servicesTabs').innerHTML = `<button class="mtab active" data-cat="all">All</button>`
     + services.categories.map(c => `<button class="mtab" data-cat="${c.id}">${c.label}</button>`).join('');
 
   document.getElementById('servicesGrid').innerHTML = services.items.map(item => `
@@ -195,9 +195,9 @@
   const ratingDec = Math.round((summary.rating - ratingInt) * 10);
   const ratingSuffix = ratingDec > 0 ? `.${ratingDec}` : '';
   document.getElementById('reviewsSummary').innerHTML = `
-    <div class="rs-item"><span class="rs-num counter" data-target="${ratingInt}" data-suffix="${ratingSuffix}">0</span><span class="rs-lbl">平均评分</span></div>
-    <div class="rs-item"><span class="rs-num counter" data-target="${summary.totalCount}" data-suffix="+" data-format="comma">0</span><span class="rs-lbl">累计评价</span></div>
-    <div class="rs-item"><span class="rs-num counter" data-target="${summary.satisfaction}" data-suffix="%">0</span><span class="rs-lbl">好评率</span></div>`;
+    <div class="rs-item"><span class="rs-num counter" data-target="${ratingInt}" data-suffix="${ratingSuffix}">0</span><span class="rs-lbl">Avg. Rating</span></div>
+    <div class="rs-item"><span class="rs-num counter" data-target="${summary.totalCount}" data-suffix="+" data-format="comma">0</span><span class="rs-lbl">Total Reviews</span></div>
+    <div class="rs-item"><span class="rs-num counter" data-target="${summary.satisfaction}" data-suffix="%">0</span><span class="rs-lbl">Satisfaction</span></div>`;
 
   /* ============================================================
    * Render — Visit
@@ -263,8 +263,8 @@
     <li>🕐 ${CFG.contact.hours.weekday}</li>
     <li>
       <button type="button" class="footer-wechat-btn" id="footerWechatBtn">
-        <img src="${CFG.contact.wechatQrImage}" alt="微信二维码占位图，请替换为真实二维码" class="footer-qr-thumb" />
-        <span>💬 微信：${CFG.contact.wechat}<br/><small>点击查看二维码</small></span>
+        <img src="${CFG.contact.wechatQrImage}" alt="WhatsApp QR code placeholder" class="footer-qr-thumb" />
+        <span>💬 WhatsApp: ${CFG.contact.wechat}<br/><small>Tap to view QR code</small></span>
       </button>
     </li>`;
 

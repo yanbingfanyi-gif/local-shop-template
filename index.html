@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>通用企业官网 Starter Kit | 3天交付 · 移动端优先 · 本地商家网站模板</title>
-  <meta name="description" content="零代码、配置驱动的本地商家网站模板 —— 适合餐饮、零售、美业等中小商家，3天即可上线专属官网。" />
+  <title>Local Business Website Starter Kit | Mobile-First HTML Template</title>
+  <meta name="description" content="Zero-dependency, config-driven HTML/CSS/JS website template for local businesses — shops, cafés, restaurants, and service providers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://local-shop-template.vercel.app" />
-  <meta property="og:title" content="通用企业官网 Starter Kit | 3天交付 · 移动端优先 · 本地商家网站模板" />
-  <meta property="og:description" content="零代码、配置驱动的本地商家网站模板 —— 适合餐饮、零售、美业等中小商家，3天即可上线专属官网。" />
-  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="Local Business Website Starter Kit | Mobile-First HTML Template" />
+  <meta property="og:description" content="Zero-dependency, config-driven HTML/CSS/JS website template for local businesses — shops, cafés, restaurants, and service providers." />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="通用企业官网 Starter Kit | 3天交付 · 移动端优先 · 本地商家网站模板" />
-  <meta name="twitter:description" content="零代码、配置驱动的本地商家网站模板 —— 适合餐饮、零售、美业等中小商家，3天即可上线专属官网。" />
+  <meta name="twitter:title" content="Local Business Website Starter Kit | Mobile-First HTML Template" />
+  <meta name="twitter:description" content="Zero-dependency, config-driven HTML/CSS/JS website template for local businesses — shops, cafés, restaurants, and service providers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <!--
     ============================================================
-    通用企业官网 Starter Kit
+    Local Business Website Starter Kit
     ============================================================
-    这是一个零依赖、纯静态的网站模板。所有可变内容（站点名称、
-    Logo、配色、导航、联系方式、各页面文案）都集中在
-    assets/js/config.js 中，由 assets/js/script.js 在页面加载时
-    读取并渲染到下方各个容器里。
+    Zero-dependency, pure static template. All variable content
+    (site name, logo, colors, nav, contact, page copy) lives in
+    assets/js/config.js — rendered by script.js on page load.
 
-    换一个客户 / 换一个行业，只需要编辑 config.js，
-    不需要改动本文件、style.css 或 script.js。
+    To customize: edit config.js only.
+    No changes needed to index.html, style.css, or script.js.
     ============================================================
   -->
 </head>
 <body>
 
-  <!-- 作品展示横幅 — 内容/显示与否由 config.js 的 meta.demoBanner 控制 -->
+  <!-- Demo banner — content and visibility controlled by config.js meta.demoBanner -->
   <div id="demoBanner"></div>
 
   <div id="progress-bar"></div>
@@ -54,8 +53,8 @@
     <div class="container nav-inner">
       <a href="#hero" class="nav-logo" id="navLogo"></a>
       <ul class="nav-links" id="navLinks"></ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="切换配色方案" title="切换配色方案"></button>
-      <button class="hamburger" id="hamburger" aria-label="菜单">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" title="Switch color theme"></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -76,7 +75,7 @@
       <div class="hero-highlights fade-in" id="heroHighlights"></div>
     </div>
     <a href="#about" class="scroll-hint">
-      <span>向下滑动</span>
+      <span>Scroll down</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
   </section>
@@ -88,7 +87,7 @@
         <div class="about-images fade-in">
           <div class="img-main img-placeholder">
             <span class="ph-icon">🖼️</span>
-            <span class="ph-label">建议替换：品牌相关实拍图</span>
+            <span class="ph-label">Replace with your brand photo</span>
           </div>
           <div class="img-secondary img-placeholder">
             <span class="ph-icon">🖼️</span>
@@ -105,7 +104,7 @@
           <p class="about-attr" id="aboutAuthor"></p>
           <div id="aboutParagraphs"></div>
           <div class="about-stats" id="aboutStats"></div>
-          <a href="#services" class="btn btn-primary">查看服务项目</a>
+          <a href="#services" class="btn btn-primary">View Our Services</a>
         </div>
       </div>
     </div>
@@ -121,7 +120,7 @@
       <div class="menu-grid" id="servicesGrid"></div>
       <div class="menu-footer fade-in">
         <p id="servicesFooterNote"></p>
-        <a href="#" class="btn btn-primary" id="servicesFooterCta">致电预订 / 咨询</a>
+        <a href="#" class="btn btn-primary" id="servicesFooterCta">Call to Book</a>
       </div>
     </div>
   </section>
@@ -154,31 +153,31 @@
       <div class="visit-grid">
 
         <div class="visit-card fade-in">
-          <h3>🕐 营业时间</h3>
+          <h3>🕐 Hours</h3>
           <div class="hours-list">
-            <div class="hour-row"><span>周一至周五</span><span id="hoursWeekday"></span></div>
-            <div class="hour-row"><span>周六 · 周日</span><span id="hoursWeekend"></span></div>
-            <div class="hour-row"><span>法定节假日</span><span id="hoursHoliday"></span></div>
+            <div class="hour-row"><span>Mon – Fri</span><span id="hoursWeekday"></span></div>
+            <div class="hour-row"><span>Sat – Sun</span><span id="hoursWeekend"></span></div>
+            <div class="hour-row"><span>Holidays</span><span id="hoursHoliday"></span></div>
           </div>
         </div>
 
         <div class="visit-card fade-in">
-          <h3>📍 门店地址</h3>
+          <h3>📍 Address</h3>
           <p class="address" id="visitAddress"></p>
-          <a href="#" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" id="visitMapLink" style="margin-top:.75rem">导航前往</a>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" id="visitMapLink" style="margin-top:.75rem">Get Directions</a>
         </div>
 
         <div class="visit-card fade-in">
-          <h3>📞 联系方式</h3>
-          <p>电话：<a href="#" id="visitPhoneLink"></a></p>
-          <p>微信号：<span id="visitWechat"></span></p>
-          <button class="btn btn-outline-dark btn-sm" id="openWechat" type="button">查看微信二维码</button>
+          <h3>📞 Contact</h3>
+          <p>Phone: <a href="#" id="visitPhoneLink"></a></p>
+          <p>WhatsApp: <span id="visitWechat"></span></p>
+          <button class="btn btn-outline-dark btn-sm" id="openWechat" type="button">View QR Code</button>
         </div>
 
         <div class="visit-card visit-qr fade-in">
-          <h3>💬 扫码加微信</h3>
-          <button type="button" class="qr-img-btn" id="visitQrBtn" aria-label="点击放大微信二维码">
-            <img src="" alt="微信二维码占位图，请替换为真实二维码" class="qr-img" id="visitQrImg" />
+          <h3>💬 Scan for WhatsApp</h3>
+          <button type="button" class="qr-img-btn" id="visitQrBtn" aria-label="Tap to enlarge WhatsApp QR code">
+            <img src="" alt="WhatsApp QR code placeholder" class="qr-img" id="visitQrImg" />
           </button>
           <p class="qr-caption" id="visitQrCaption"></p>
         </div>
@@ -211,11 +210,11 @@
           <div class="footer-socials" id="footerSocials"></div>
         </div>
         <div class="footer-col">
-          <h5>快速链接</h5>
+          <h5>Quick Links</h5>
           <ul id="footerNavLinks"></ul>
         </div>
         <div class="footer-col">
-          <h5>联系我们</h5>
+          <h5>Contact</h5>
           <ul class="footer-contact" id="footerContact"></ul>
         </div>
       </div>
@@ -231,13 +230,13 @@
   <!-- ── MOBILE STICKY BAR ── -->
   <div class="mobile-bar">
     <a href="#" class="mobile-bar-item" id="mobileBarPhone">
-      <span class="mb-icon">📞</span><span class="mb-label">电话</span>
+      <span class="mb-icon">📞</span><span class="mb-label">Call</span>
     </a>
     <a href="#" target="_blank" rel="noopener" class="mobile-bar-item" id="mobileBarMap">
-      <span class="mb-icon">📍</span><span class="mb-label">导航</span>
+      <span class="mb-icon">📍</span><span class="mb-label">Map</span>
     </a>
     <button class="mobile-bar-item" id="mobileBarWechat" type="button">
-      <span class="mb-icon">💬</span><span class="mb-label">微信</span>
+      <span class="mb-icon">💬</span><span class="mb-label">WhatsApp</span>
     </button>
   </div>
 
@@ -245,14 +244,14 @@
   <div class="qr-modal" id="qrModal" aria-hidden="true">
     <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
     <div class="qr-modal-content">
-      <button class="qr-modal-close" id="qrModalClose" aria-label="关闭">×</button>
-      <h3>扫码添加微信</h3>
-      <img src="" alt="微信二维码占位图，请替换为真实二维码" id="qrModalImg" />
-      <p>微信号：<span id="qrModalWechat"></span></p>
+      <button class="qr-modal-close" id="qrModalClose" aria-label="Close">×</button>
+      <h3>Scan for WhatsApp</h3>
+      <img src="" alt="WhatsApp QR code placeholder" id="qrModalImg" />
+      <p>WhatsApp: <span id="qrModalWechat"></span></p>
     </div>
   </div>
 
-  <button id="back-to-top" aria-label="回到顶部">↑</button>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/script.js"></script>
